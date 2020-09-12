@@ -1,16 +1,6 @@
-# Node.js boilerplate - Typescript + Jest
+# Quohi-Api
 
-Replaces my previous boilerplate ([ts-node & mocha](https://github.com/andrezero/boilerplate-ts-nyc-mocha#kudos))
-
-Uses:
-
-- [typescript 4](https://www.typescriptlang.org/docs/)
-- [jest 26.4](https://jestjs.io/docs/en/getting-started)
-- [eslint 7.8](https://eslint.org/) + [prettier 2](https://prettier.io/)
-
-Bootstraps:
-
-- [express 4.7](https://expressjs.com/) + [http-pino](https://github.com/pinojs/pino-http)
+> Geolocated history events
 
 ## dev scripts
 
@@ -27,15 +17,17 @@ Bootstraps:
 
 - `npm start` - run server (json logs)
 
-## kudos
+## under the hood
 
-- https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
-- https://dev.to/macmacky/how-to-debug-nodejs-typescript-code-in-vscode-4o27
-- https://khalilstemmler.com/blogs/typescript/node-starter-project/
-- https://www.robinwieruch.de/minimal-node-js-babel-setup
-- https://www.robertcooper.me/using-eslint-and-prettier-in-a-typescript-project
-- https://github.com/pinojs/pino-http
-- https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln
+Based on [Boilerplate-ts-jest](https://github.com/andrezero/boilerplate-ts-jest)
+
+Uses:
+
+- [typescript 4](https://www.typescriptlang.org/docs/)
+- [jest 26.4](https://jestjs.io/docs/en/getting-started)
+- [eslint 7.8](https://eslint.org/) + [prettier 2](https://prettier.io/)
+- [express 4.7](https://expressjs.com/)
+- [http-pino](https://github.com/pinojs/pino-http)
 
 ## MIT License
 
