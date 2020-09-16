@@ -7,9 +7,8 @@ import mongoose from 'mongoose';
 import index from './routes/index';
 import events from './routes/events';
 
-const logger = pinoHttp({
-  logger: pino(),
-});
+const logger = pino();
+const loggerMiddleware = pinoHttp({ logger });
 
 const app = express();
 
@@ -24,7 +23,7 @@ db.on('error', (err: any) => console.error('MongoDB connection error:', err));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger);
+app.use(loggerMiddleware);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -38,6 +37,7 @@ app.use((req, res) => {
 });
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+  logger.error(err);
   res.status(err.status || 500);
   res.json({ error: 'unexpected' });
 });
