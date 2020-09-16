@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Document } from 'mongoose';
 
 const EventSchema = new Schema({
   name: { type: String, required: true, max: 100 },
@@ -16,4 +16,15 @@ const EventSchema = new Schema({
   },
 });
 
-export const Event = model('Event', EventSchema);
+export interface EventData {
+  name: string;
+  date: Date;
+  location: {
+    type: string;
+    coordinates: Array<number>;
+  };
+}
+
+export type EventModel = Document & EventData;
+
+export const Event = model<EventModel>('Event', EventSchema);
